@@ -102,8 +102,8 @@ public class Campo {
     }
 
     //conta quantas minas estão em volta do campo com uma stream
-    public long minasNaVizinanca() {
-        return vizinhos.stream().filter(v -> v.minado).count();
+    public int minasNaVizinanca() {
+        return (int) vizinhos.stream().filter(v -> v.minado).count();
     }
 
     public void reiniciar() {
