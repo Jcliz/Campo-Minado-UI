@@ -21,6 +21,7 @@ public class BotaoCampo extends JButton
     public BotaoCampo(Campo campo) {
         this.campo = campo;
         setBackground(BG_PADRAO);
+        setOpaque(true);
         setBorder(BorderFactory.createBevelBorder(0));
 
         addMouseListener(this);
@@ -48,15 +49,30 @@ public class BotaoCampo extends JButton
     }
 
     private void aplicarEstiloPadrao() {
+        setBackground(BG_PADRAO);
+        setText("");
     }
 
     private void aplicarEstiloExplodir() {
+        setBackground(BG_EXPLOSAO);
+        setForeground(Color.WHITE);
+        setText("X");
     }
 
     private void aplicarEstiloMarcar() {
+        setBackground(BG_MARCAR);
+        setForeground(Color.BLACK);
+        setText("+");
     }
 
     private void aplicarEstiloAbrir() {
+        setBorder(BorderFactory.createLineBorder(Color.GRAY));
+
+        if (campo.isMinado()) {
+            setBackground(BG_EXPLOSAO);
+            return;
+        }
+
         setBackground(BG_PADRAO);
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
