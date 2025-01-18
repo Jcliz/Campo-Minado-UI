@@ -50,6 +50,7 @@ public class BotaoCampo extends JButton
 
     private void aplicarEstiloPadrao() {
         setBackground(BG_PADRAO);
+        setBorder(BorderFactory.createBevelBorder(0));
         setText("");
     }
 
